@@ -1,0 +1,23 @@
+<!-- https://www.codingninjas.com/studio/problems/check-armstrong_589?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf -->
+
+#include <bits/stdc++.h>
+
+bool checkArmstrong(int n){
+	int ori = n;
+	int count = 0;
+	while(ori > 0){
+		count++;
+		ori=ori/10;
+	}
+	int ori1 = n;
+	int sum = 0;
+	while(ori1 > 0){
+		int lastDigit = ori1 % 10;
+		sum = sum + pow(lastDigit, count);
+		ori1 = ori1/10;
+	}
+	if(n == sum){
+		return true;
+	}
+	return false;
+}
