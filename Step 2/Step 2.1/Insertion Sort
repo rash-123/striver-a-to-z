@@ -1,0 +1,14 @@
+<!-- https://www.codingninjas.com/studio/problems/insertion-sort_624381?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=PROBLEM -->
+
+void insertionSort(int arr[], int n)
+{
+    for(int i = 1; i < n; i++){
+        int curr = arr[i];
+        int j = i-1;
+        while(j >= 0 && arr[j] > curr){
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = curr;
+    }
+}
