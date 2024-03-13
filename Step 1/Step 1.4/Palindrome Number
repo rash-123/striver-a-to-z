@@ -1,0 +1,22 @@
+<!-- https://leetcode.com/problems/palindrome-number/description/ -->
+
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x < 0){
+            return false;
+        }
+        int original = x;
+        long long int rem = 0;
+        while(x>0){
+            long long int lastDigit = x % 10;
+            rem = (rem * 10) + lastDigit;
+            x = x / 10;
+        }
+        if(original == rem){
+            return true;
+        }
+        return false;
+    }
+};
