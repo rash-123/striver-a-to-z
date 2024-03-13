@@ -1,0 +1,15 @@
+<!-- https://www.codingninjas.com/studio/problems/count-digits_8416387?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf -->
+
+int countDigits(int n){
+	// Write your code here.
+	int count = 0;
+	int a = n;
+	while(n > 0){
+		int d = n % 10;
+		if(d != 0 && a % d == 0){
+			count++;
+		}
+		n = n/10;
+	}
+	return count;
+}
