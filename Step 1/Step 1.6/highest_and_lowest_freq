@@ -1,0 +1,26 @@
+<!-- https://www.codingninjas.com/studio/problems/k-most-occurrent-numbers_625382?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf -->
+
+vector<int> getFrequencies(vector<int>& v) {
+    // Write Your Code Here
+    int n = v.size();
+    vector<int> hash;
+    map<int,int> freq;
+    for(int i = 0; i < n; i++){
+        freq[v[i]]++;
+    }
+    int max = INT_MIN, min = INT_MAX, highest = 0, lowest = 0;
+    for(auto x: freq){
+        if(x.second > max){
+            max = x.second;
+            highest = x.first;
+        }
+        if(x.second < min){
+            min = x.second;
+            lowest = x.first;
+        }
+    }
+    hash.push_back(highest);
+    hash.push_back(lowest);
+    return hash;
+    
+}
