@@ -1,0 +1,13 @@
+// https://www.codingninjas.com/studio/problems/check-palindrome-recursive_624386?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
+
+
+bool isPalindrome(string& str) {
+   int n = str.size();
+   for(int i = 0; i <= n/2; i++){
+       if(str[i] != str[n-1-i]){
+           return false;
+       }
+   }
+   return true;
+
+}
