@@ -1,0 +1,16 @@
+<!-- https://www.codingninjas.com/studio/problems/insert-at-end-of-doubly-linked-list_8160464?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=PROBLEM -->
+
+Node * insertAtTail(Node *head, int k) {
+    // Write your code here
+    Node *newNode = new Node(k);
+    if(head == nullptr){
+        head = newNode;
+    }
+    Node *curr = head;
+    while(curr->next != nullptr){
+        curr = curr -> next;
+    }
+    curr->next = newNode;
+    newNode->prev = curr;
+    return head;
+}
