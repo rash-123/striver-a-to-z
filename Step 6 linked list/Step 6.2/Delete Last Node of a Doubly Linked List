@@ -1,0 +1,19 @@
+<!-- https://www.codingninjas.com/studio/problems/delete-last-node-of-a-doubly-linked-list_8160469?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf -->
+
+Node * deleteLastNode(Node *head) {
+    // Write your code here
+    if(head == NULL){
+        return NULL;
+    }
+    if(head->next == NULL){
+        delete head;
+        return NULL;
+    }
+    Node *curr = head;
+    while(curr->next != NULL){
+        curr = curr -> next;
+    }
+    curr->prev->next = NULL;
+    delete curr;
+    return head;
+}
