@@ -1,0 +1,10 @@
+<!-- https://www.codingninjas.com/studio/problems/ceiling-in-a-sorted-array_1825401?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf -->
+
+pair<int, int> getFloorAndCeil(int arr[], int n, int x) {
+	// Write your code here.
+	sort(arr, arr+n);
+	int ceil = lower_bound(arr, arr+n, x)-arr;
+	int floor = upper_bound(arr, arr+n, x) - arr;
+	//cout << ceil << " " << floor;
+	return {floor == 0?-1:arr[floor-1], ceil == n?-1:arr[ceil]};
+}
