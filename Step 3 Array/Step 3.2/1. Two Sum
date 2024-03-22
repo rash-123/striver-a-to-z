@@ -1,0 +1,22 @@
+https://leetcode.com/problems/two-sum/
+
+time - O(N)
+space - O(N)
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+       map<int,int> freq;
+       int n = nums.size();
+       for(int i = 0; i < n; i++){
+        int a = nums[i];
+        int b = target-a;
+        if(freq.find(b) != freq.end()){
+            return {freq[b], i};
+        }
+        //key me a ja rahe or value me i
+        freq[a] = i;
+       }
+       return {-1, -1};
+    }
+};
