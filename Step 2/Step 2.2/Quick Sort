@@ -1,0 +1,33 @@
+https://www.codingninjas.com/studio/problems/quick-sort_5844?leftPanelTabValue=PROBLEM
+
+int partitionArray(int input[], int start, int end) {
+	int pivot = input[start];
+	int p = start+1;
+	int q = end;
+	while(p <= q){
+		while(input[p] < pivot){
+			p++;
+		}
+		
+		while(input[q] > pivot){
+			q--;
+		}
+
+		if(p <= q){
+			swap(input[p], input[q]);
+			p++;
+			q--;
+		}
+	}
+
+	swap(input[start], input[q]);
+	return q;
+}
+
+void quickSort(int input[], int start, int end) {
+        if (start < end) {
+          int pivot = partitionArray(input, start, end);
+          quickSort(input, start, pivot - 1);
+          quickSort(input, pivot + 1, end);
+        }
+}
